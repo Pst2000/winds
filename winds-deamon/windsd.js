@@ -1,13 +1,9 @@
 'use strict';
 
-import GXClientFactory from 'gxclient';
-import { private_key, account_id, test_id } from './config';
+const GXClient = require('gxclient').GXClient;
+const { private_key, account_id, test_id } = require('./config');
 
-let client = GXClientFactory.instance({
-    keyProvider: private_key,
-    account: account_id,
-    network: 'https://testnet.gxchain.org'
-});
+let client = new GXClient(private_key, account_id, 'https://testnet.gxchain.org');
 
 async function getBlockHeight() {
     const prop = await client.getDynamicGlobalProperties();
@@ -56,7 +52,7 @@ async function enumBlock() {
     if (currBlock != pos) {
         prevBlock = currBlock; currBlock = pos;
         if (prevBlock != 0) {
-            console.log(`parsing the block #${prevBlock}`);
+            console.log(`parsing the block #${currBlock}`);
             const list = await doQuery(prevBlock);
             list.forEach(x => {
                 console.log(x.account + ' ' + x.data);

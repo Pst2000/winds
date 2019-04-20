@@ -107,7 +107,7 @@ class winds : public contract
 
     typedef multi_index<N(subscribes), subscribes,
                         indexed_by<N(usr), const_mem_fun<subscribes, uint64_t, &subscribes::by_index1>>,
-                        indexed_by<N(ven), const_mem_fun<subscribes, uint64_t, &subscribes::by_index2>>
+                        indexed_by<N(ven), const_mem_fun<subscribes, uint64_t, &subscribes::by_index2>>>
         subscribes_index;
 
     subscribes_index offers;

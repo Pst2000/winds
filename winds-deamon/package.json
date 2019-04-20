@@ -1,0 +1,17 @@
+{
+  "name": "winds-deamon",
+  "version": "0.0.1",
+  "description": "A deamon of project WINDS.",
+  "main": "windsd.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "gxclient": "^2.1.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

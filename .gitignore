@@ -1,0 +1,5 @@
+winds-deamon/node_modules/*
+winds-deamon/entry.js
+winds-deamon/config.js
+winds-deamon/.babelrc
+winds-deamon/package-lock.json

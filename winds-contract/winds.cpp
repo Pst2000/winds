@@ -29,4 +29,4 @@ class winds : public contract
     }
 };
 
-GRAPHENE_ABI(winds, (push)(subscribe))
+GRAPHENE_ABI(winds, (push))

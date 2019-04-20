@@ -16,7 +16,7 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 
 ### 促进区块链技术发展、落地：
 
-
+1. 推广这种以算法而非信用保证用户隐私的理念
 
 ## 资源流动
 
@@ -29,8 +29,8 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 
 ### 代币
 
-用户，区块链，内容商之间的信息传递需要消耗代币，代币总额就会减少。\
-内容商需要通过维护网络获得代币来维持代币流通。
+* 用户，区块链，内容商之间的信息传递需要消耗代币，代币总额就会减少。
+* 内容商需要通过维护网络获得代币来维持代币流通。
 
 ### 现金
 
@@ -40,22 +40,35 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 
 ### 智能合约
 
-'''
-push(): called by usr, broadcast point of interest or send content refresh request \
-        called by ven, release content update \
-\
-subscribes: abi table, full (un)subscribe history \
-additem(ven,sub): called by usr, new usr-ven info update (records are always increasing) \
-getbypk (key): get key'th record \
-getbyusr(usr): get usr's full record \
-getbyven(ven): get ven's full record
-'''
+```
+push(): called by usr, broadcast point of interest or send content refresh request
+        called by ven, release content update
 
-客户端管理用户的各个身份分离式调用 push() 和 subscribes.additem() 进行兴趣词广播和订阅操作。 \
-客户端保证各身份在行为上彼此独立，合约为用户提供匿名性。
+subscribes: abi table, full (un)subscribe history
+additem(ven,sub): called by usr, new usr-ven info update (records are always increasing)
+getbypk (key): get key'th record
+getbyusr(usr): get usr's full record
+getbyven(ven): get ven's full record
+```
+
+* 客户端管理用户的各个身份分离式调用 push(), subscribes.additem() 和 subscribes.getusr() 进行兴趣词广播、订阅和订阅查询操作
+* 服务端 push() 广播更新/公告，subscribes.getven() 查询服务对象列表。
+* 区块链算法与本合约为用户提供匿名性。
 
 ### 客户端
 
 ### 服务端
 
 ## 可调节参数
+
+### 身份的生命周期
+
+生命周期越短，用户被交叉定位的几率越低，但数据基础会较为薄弱。
+
+### 接收广播内容所需的混淆
+
+总数为 n 的用户中大约 k 位响应可追踪网络中的广播，隐藏实际的接收者。k 越大，混淆越强，网络成本越大。
+
+### 客户端对身份间独立性的时序混淆
+
+客户端对用户不同身份的行为引入延时进行时序混淆。混淆越强，延时越大。

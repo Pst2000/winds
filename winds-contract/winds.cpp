@@ -5,6 +5,7 @@
  * Whoever said that.
  * 
  * push(): hello.cpp
+ * subscribes: table
  */
 
 #include <graphenelib/contract.hpp>

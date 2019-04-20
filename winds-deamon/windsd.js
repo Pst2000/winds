@@ -46,7 +46,7 @@ async function doQuery(blockID) {
 function sleep(delay) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, delay);
-     })
+    })
 }
 
 let prevBlock, currBlock = 0;

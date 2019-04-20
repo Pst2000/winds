@@ -29,7 +29,7 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 
 ### 代币
 
-用户，区块链，内容商之间的信息传递需要消耗代币，代币总额就会减少。
+用户，区块链，内容商之间的信息传递需要消耗代币，代币总额就会减少。\
 内容商需要通过维护网络获得代币来维持代币流通。
 
 ### 现金
@@ -41,17 +41,17 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 ### 智能合约
 
 '''
-push(): called by usr, broadcast point of interest or send content refresh request
-        called by ven, release content update
-
-subscribes: abi table, full (un)subscribe history
-additem(ven,sub): called by usr, new usr-ven info update (records are always increasing)
-getbypk (key): get key'th record
-getbyusr(usr): get usr's full record
+push(): called by usr, broadcast point of interest or send content refresh request \
+        called by ven, release content update \
+\
+subscribes: abi table, full (un)subscribe history \
+additem(ven,sub): called by usr, new usr-ven info update (records are always increasing) \
+getbypk (key): get key'th record \
+getbyusr(usr): get usr's full record \
 getbyven(ven): get ven's full record
 '''
 
-客户端管理用户的各个身份分离式调用 push() 和 subscribes.additem() 进行兴趣词广播和订阅操作。
+客户端管理用户的各个身份分离式调用 push() 和 subscribes.additem() 进行兴趣词广播和订阅操作。 \
 客户端保证各身份在行为上彼此独立，合约为用户提供匿名性。
 
 ### 客户端

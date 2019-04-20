@@ -3,3 +3,6 @@ winds-deamon/entry.js
 winds-deamon/config.js
 winds-deamon/.babelrc
 winds-deamon/package-lock.json
+
+winds-development-cnbeta-spider/*
+winds-client/*

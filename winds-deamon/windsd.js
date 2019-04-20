@@ -6,7 +6,7 @@ import { private_key, account_id, test_id } from './config';
 let client = GXClientFactory.instance({
     keyProvider: private_key,
     account: account_id,
-    network: 'http://39.105.155.174:28090'
+    network: 'https://testnet.gxchain.org'
 });
 
 async function getBlockHeight() {
@@ -27,27 +27,44 @@ async function parseBlock(block) {
 }
 
 function generateQuery(blockID) {
+    if (typeof blockID == 'number') {
+        return Promise.all([ new Promise((resolve, reject) => {
+            client.getBlock(blockID).then(block => {
+                resolve(parseBlock(block));
+            });
+        }) ]);
+    } else {
+        return Promise.all(blockID.map(generateQuery));
+    }
+}
+
+async function doQuery(blockID) {
+    const obj = await generateQuery(prevBlock);
+    return obj.reduce((x, y) => x.concat(y));
+}
+
+function sleep(delay) {
     return new Promise((resolve, reject) => {
-        client.getBlock(blockID).then(block => {
-            resolve(parseBlock(block));
-        });
-    });
+        setTimeout(resolve, delay);
+     })
 }
 
-async function main() {
+let prevBlock, currBlock = 0;
+
+async function enumBlock() {
     const pos = await getBlockHeight();
-    console.log(pos);
-
-    const input = [13045795, 13045212, 13045401, 13045302];
-    const obj = await Promise.all(input.map(generateQuery));
-    const list = obj.reduce((x, y) => x.concat(y));
-    list.forEach(x => {
-        console.log(x.account + ' ' + x.data);
-    });
-
-    return;
-    const trx = await client.getContractTable('windstest1');
-    console.log(trx);
+    if (currBlock != pos) {
+        prevBlock = currBlock; currBlock = pos;
+        if (prevBlock != 0) {
+            console.log(`parsing the block #${prevBlock}`);
+            const list = await doQuery(prevBlock);
+            list.forEach(x => {
+                console.log(x.account + ' ' + x.data);
+            });
+        }
+    }
+    await sleep(1200);
+    enumBlock();
 }
 
-main();
+enumBlock();

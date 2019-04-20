@@ -4,7 +4,14 @@
  * works and voila... The world becomes a better place.
  * Whoever said that.
  * 
- * push(): hello.cpp
+ * push(): called by usr, broadcast point of interest or send content refresh request
+ *         called by ven, release content update
+ *
+ * subscribes: abi table, full (un)subscribe history
+ * additem(ven,sub): called by usr, new usr-ven info update (records are always increasing)
+ * getbypk (key): get key'th record
+ * getbyusr(usr): get usr's full record
+ * getbyven(ven): get ven's full record
  */
 
 #include <graphenelib/contract.hpp>

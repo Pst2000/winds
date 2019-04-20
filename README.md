@@ -1,3 +1,3 @@
-## Project WINDS / 风闻
+# Project WINDS / 风闻
 
 "WINDS Is Not a Digital Spy"

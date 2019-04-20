@@ -1,2 +1,0 @@
-Stark
-Neko

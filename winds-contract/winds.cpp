@@ -4,8 +4,14 @@
  * works and voila... The world becomes a better place.
  * Whoever said that.
  * 
- * push(): hello.cpp
- * subscribes: table
+ * push(): called by usr, broadcast point of interest or send content refresh request
+ *         called by ven, release content update
+ *
+ * subscribes: abi table, full (un)subscribe history
+ * additem(ven,sub): called by usr, new usr-ven info update (records are always increasing)
+ * getbypk (key): get key'th record
+ * getbyusr(usr): get usr's full record
+ * getbyven(ven): get ven's full record
  */
 
 #include <graphenelib/contract.hpp>
@@ -47,7 +53,7 @@ class winds : public contract
             o.Btime = get_head_block_time();
         });
     }
-
+    
     //@abi action
     void getbypk(uint64_t key)
     {
@@ -62,7 +68,7 @@ class winds : public contract
     {
         auto idx = offers.template get_index<N(usr)>();
         auto matched_offer_itr = idx.lower_bound(key);
-        if (matched_offer_itr != idx.end()) {
+        for (;matched_offer_itr != idx.end();++matched_offer_itr) {
             dump_item(*matched_offer_itr);
         }
     }
@@ -72,7 +78,7 @@ class winds : public contract
     {
         auto idx = offers.template get_index<N(ven)>();
         auto matched_offer_itr = idx.lower_bound(key);
-        if (matched_offer_itr != idx.end()) {
+        for (;matched_offer_itr != idx.end();++matched_offer_itr) {
             dump_item(*matched_offer_itr);
         }
     }

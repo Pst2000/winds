@@ -4,6 +4,20 @@
  * Released under the MIT License.
  */
 
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/**
+ * @license bytebuffer.js (c) 2015 Daniel Wirtz <dcode@dcode.io>
+ * Backing buffer: ArrayBuffer, Accessor: Uint8Array
+ * Released under the Apache License, Version 2.0
+ * see: https://github.com/dcodeIO/bytebuffer.js for details
+ */
+
 /**
  * vue-meta v1.5.8
  * (c) 2018 Declan de Wet & Sébastien Chopin (@Atinux)
@@ -29,6 +43,12 @@
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
+ */
+
+/**
+ * @license long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
+ * Released under the Apache License, Version 2.0
+ * see: https://github.com/dcodeIO/long.js for details
  */
 
 /**

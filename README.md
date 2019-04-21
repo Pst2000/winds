@@ -132,3 +132,11 @@ getbyven(ven): get ven's full record
 ## Sponsor
 
 ![spnsrlogo](./bitrunlogo.png)
+
+## 致谢
+
+* Nuxt.js：可靠的开发框架
+* cnBeta：丰富的新闻材料
+* 阿里云：稳定后端服务器
+* GitPages：免费的静态页面托管
+* 公信宝 的 gxclient-node 工程

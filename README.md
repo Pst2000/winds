@@ -91,6 +91,10 @@ getbyven(ven): get ven's full record
 
 能获利且尽量减少用户的不良体验，留住订阅且服务能持续运行。
 
+## 前端 demo
+
+![QRcode](./demoQR.png)
+
 ## FAQ
 
 ### 用户是否可以通过付费消除广告

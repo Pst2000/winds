@@ -17,6 +17,8 @@ WINDS是*WINDS Is Not a Digital Spy*（WINDS不是数字间谍！）的递归缩
 ### 促进区块链技术发展、落地：
 
 1. 推广这种以算法而非信用保证用户隐私的理念。
+2. 将技术融入人文生活，创造一个良好的舆论氛围。
+3. 为相似或完全不同的项目提供灵感。
 
 ## 资源流动
 
@@ -118,3 +120,7 @@ getbyven(ven): get ven's full record
 ### 怎样可以对网络的运行方式有一个直观的理解
 
 参见*资源流动*小结。
+
+## Sponsor
+
+![spnsrlogo](./bitrunlogo.png)

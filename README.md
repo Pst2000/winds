@@ -91,6 +91,10 @@ getbyven(ven): get ven's full record
 
 能获利且尽量减少用户的不良体验，留住订阅且服务能持续运行。
 
+## 前端 demo
+
+![QRcode](./demoQR.png)
+
 ## FAQ
 
 ### 用户是否可以通过付费消除广告
@@ -113,6 +117,10 @@ getbyven(ven): get ven's full record
 
 信息源间竞争带来的良好内容质量，生活不被监视的尊严。
 
+### 谁知道用户的真实身份
+
+内容商不知道（混淆），广告商不知道（广告格式限制），我们不知道（开源），只有透明运作的客户端保存了用户的完整身份。
+
 ### 内容发放者如何获利
 
 投送广告。
@@ -124,3 +132,11 @@ getbyven(ven): get ven's full record
 ## Sponsor
 
 ![spnsrlogo](./bitrunlogo.png)
+
+## 致谢
+
+* Nuxt.js：可靠的开发框架
+* cnBeta：丰富的新闻材料
+* 阿里云：稳定后端服务器
+* GitPages：免费的静态页面托管
+* 公信宝 的 gxclient-node 工程

@@ -95,6 +95,8 @@ getbyven(ven): get ven's full record
 
 ![QRcode](./demoQR.png)
 
+(update 2019/04/22: 测试用的WINDS后端服务器已暂停，故Demo暂时下线。)
+
 ## FAQ
 
 ### 用户是否可以通过付费消除广告
